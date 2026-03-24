@@ -13,7 +13,7 @@ Print "Vaccine Eligibility: Yes"
 Print details (e.age, e.n)
 Return 0
 Program:
-
+```
 #include <stdio.h>
 #include <string.h>
 
@@ -34,12 +34,11 @@ int main() {
     printf("eligibility:yes");
     else
     printf("eligibility:no");
-    return 0;
+    return 0;
 }
+```
 Output:
-
-WhatsApp Image 2025-04-25 at 10 50 48_d13a0ec0
-
+<img width="1258" height="244" alt="image" src="https://github.com/user-attachments/assets/1ca15a7f-cfa5-499b-b6b8-7226ada8bdfa" />
 Result: Thus, the program is verified successfully.
 
 EXP NO:2 C PROGRAM FOR PASSING STRUCTURES AS FUNCTION ARGUMENTS AND RETURNING A STRUCTURE FROM A FUNCTION Aim: To write a C program for passing structure as function and returning a structure from a function
@@ -54,7 +53,7 @@ Call the add function with n as an argument.
 Print the result returned by the add function.
 Return 0
 Program:
-
+```
 #include <stdio.h>
 struct numbers {
     int a;
@@ -77,9 +76,9 @@ int main() {
     printf("Product: %d\n", result.b);
     return 0;
 }
+```
 Output:
-
-image
+<img width="852" height="436" alt="image" src="https://github.com/user-attachments/assets/f16e4e10-7db5-48d1-abfb-4c3a2799507a" />
 Result: Thus, the program is verified successfully
 
 EXP.NO:3 C PROGRAM TO READ A FILE NAME FROM USER AND WRITE THAT FILE USING FOPEN()
@@ -102,7 +101,7 @@ Print a message indicating that the file has been closed.
 End the main function.
 Return 0 to indicate successful program execution.
 Program:
-
+```
 #include <stdio.h>
 int main()
 {
@@ -115,119 +114,7 @@ int main()
     fclose(fp);
     printf("%s File Closed\n",name);
 }
+```
 Output:
-
-WhatsApp Image 2025-04-25 at 11 02 20_fb5784b7
-
+<img width="849" height="281" alt="image" src="https://github.com/user-attachments/assets/4571ed7c-ceb9-41b8-852c-3e44f4d282be" />
 Result: Thus, the program is verified successfully
-
-EXP NO:4 PROGRAM TO READ A FILE NAME FROM USER, WRITE THAT FILE AND INSERT TEXT IN TO THAT FILE Aim: To write a C program to read, a file and insert text in that file Algorithm:
-
-Include the necessary header file stdio.h.
-Begin the main function.
-Declare a file pointer p. Declare character arrays name and text. Declare an integer variable num.
-Prompt the user to enter a file name and the number of strings. Use scanf to input the file name into the name array and the number of strings into the num variable.
-Use fopen to open a file with the name provided by the user in write mode ("w").
-If successful, continue to the next step.
-If unsuccessful, print an error message and exit the program with a non-zero status.
-Print a message indicating that the file has been opened successfully.
-Use a loop to input strings from the user and write them to the file using fputs.
-Use fclose to close the file.
-Print a message indicating that data has been added successfully.
-End the main function.
-Return 0 to indicate successful program execution.
-Program:
-
-#include <stdio.h>
-int main()
-{
-    FILE *fp;
-    char filename[100];
-    scanf("%s",filename);
-    fp=fopen("%s","w");
-    int count;
-    scanf("%d",&count);
-    float num;
-    if(fp==NULL)
-    {
-        printf("Error");
-    }
-    printf("%s Opened\n",filename);
-    for(int i=0;i<count;i++)
-    {
-        scanf("%f",&num);
-        fprintf(fp,"%f",num);
-    }
-    printf("Data added Successfully");
-}
-Output:
-
-WhatsApp Image 2025-04-25 at 11 01 49_050466c3
-
-Result: Thus, the program is verified successfully
-
-Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
-
-Aim: The aim of this program is to dynamically allocate memory to store information about multiple subjects (name and marks), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.
-
-Algorithm: 1.Input the number of subjects.
-
-2.Read the integer value n from the user, which represents the number of subjects.
-
-3.Dynamically allocate memory:
-
-4.Use malloc to allocate memory for n subjects. Each subject has a name (array of characters) and marks (integer).
-
-5.If memory allocation fails (i.e., the pointer s is NULL), display an error message and exit the program.
-
-6.Input the details of each subject
-
-7.Use a for loop to read the name and marks of each subject using scanf. For each subject, store the name as a string and marks as an integer in the dynamically allocated memory.
-
-8.Display the details of each subject
-
-9.Use another for loop to print the name and marks of each subject.
-
-10.Free the allocated memory
-
-11.After all operations are done, call free(s) to release the dynamically allocated memory.
-
-12.Return from the main function
-
-13.End the program by returning 0.
-
-Program:
-
-#include <stdio.h>
-#include <stdlib.h>
-struct Subject {
-    char name[50];
-    int marks;
-};
-int main() {
-    int n, i;
-    struct Subject *s;
-    printf("Enter number of subjects: ");
-    scanf("%d", &n);
-    s = (struct Subject *)malloc(n * sizeof(struct Subject));
-    if (s == NULL) {
-        printf("Memory not allocated.\n");
-        return 1;
-    }
-    for (i = 0; i < n; i++) {
-        printf("Enter name and marks of subject %d: ", i + 1);
-        scanf("%s %d", s[i].name, &s[i].marks);
-    }
-    printf("\nSubject Details:\n");
-    for (i = 0; i < n; i++) {
-        printf("Name: %s, Marks: %d\n", s[i].name, s[i].marks);
-    }
-    free(s);
-    return 0;
-}
-
-Output:
-
-image
-Result: Thus, the program is verified successfully
-
